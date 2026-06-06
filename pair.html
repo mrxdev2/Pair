@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkX-Ultra PAIR CODE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url("https://files.catbox.moe/6lke1p.png"); /* Updated Background Image */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .box {
+      width: 320px;
+      height: auto;
+      padding: 30px 20px;
+      position: relative;
+      text-align: center;
+      background-color: rgba(15, 15, 25, 0.75); /* Darker sleek background */
+      border: 2px solid #8a2be2; /* Neon purple border */
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.5); /* Neon glow effect */
+    }
+
+    #text {
+      color: #fff; /* Tech text color */
+    }
+
+    .centered-text {
+      color: #00ffff; /* Neon cyan for headers */
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    }
+
+    .sub-text {
+      color: #b0b0b0;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      background: #1a1a2e;
+      border-radius: 1rem;
+      border: 1px solid #3d3d5c;
+      padding: 0.3rem;
+      gap: 0.3rem;
+      max-width: 300px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .input-container input {
+      border-radius: 0.8rem 0 0 0.8rem;
+      background: #0f0f1a;
+      width: 70%;
+      padding: 1rem;
+      border: none;
+      border-left: 2px solid #8a2be2;
+      color: #ffffff;
+      font-size: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .input-container input:focus {
+      border-left: 2px solid #00ffff;
+      outline: none;
+    }
+
+    /* Target modern browsers to remove arrows */
+    .input-container input::-webkit-outer-spin-button,
+    .input-container input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Target Firefox */
+    .input-container input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    .input-container button {
+      width: 30%;
+      padding: 1rem 0;
+      background: linear-gradient(135deg, #8a2be2 0%, #4b0082 100%); /* Deep Purple */
+      font-weight: 900;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: white;
+      border: none;
+      border-radius: 0 0.8rem 0.8rem 0;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .input-container button:hover {
+      background: linear-gradient(135deg, #00ffff 0%, #008080 100%); /* Neon Cyan Hover */
+      color: #000; 
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+
+    @media (max-width: 500px) {
+      .input-container {
+        flex-direction: column;
+      }
+
+      .input-container input {
+        border-radius: 0.8rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .input-container button {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0.8rem;
+      }
+    }
+    
+    /* Glowing Text - DarkX Style */
+    .glowing-text {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 
+        0 0 5px #8a2be2, 
+        0 0 10px #8a2be2, 
+        0 0 15px #00ffff, 
+        0 0 20px #00ffff;
+      animation: glow 3s infinite;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+      }
+      50% {
+        text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+      }
+      100% {
+        text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+      }
+    }    
+ 
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="box" id="box">
+        <div id="text">
+          <i class="fa-solid fa-mask" style="font-size: 2.5rem; color: #00ffff; margin-bottom: 10px;"></i>
+          <h2 class="centered-text">DARKX-ULTRA</h2>           
+          <div class="sub-text">⚙️ Enter your number with country code ⚙️</div>
+          
+          <div class="input-container">
+            <input placeholder="2637147XX" type="number" id="number">
+            <button id="submit">GET</button>
+          </div>
+         
+          <br>
+          <main id="pair"></main>
+        </div>
+      </div>
+    </div>
+    <div class="glowing-text">Powered By MrX Dev</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+
+    async function Copy() {
+      let obj = document.getElementById("copyText");
+      let originalCode = obj.innerText;
+      await navigator.clipboard.writeText(originalCode);
+      
+      let parentObj = document.getElementById("copy");
+      parentObj.innerHTML = 'CODE: <span style="color:#00ff00; font-weight:bold">COPIED!</span>';
+      
+      setTimeout(() => {
+        parentObj.innerHTML = 'CODE: <span id="copyText" style="color:#00ffff; font-weight:bold">' + originalCode + '</span>';
+      }, 1000);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!c.value) {
+        a.innerHTML = '<a style="color:#ff3333; font-weight:bold">❗Enter your WhatsApp number.</a><br><br>';
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<a style="color:#ff3333; font-weight:bold">❌ Invalid number format ❌</a><br><br>';
+      } else {
+        const bc = c.value.replace(/[^0-9]/g, "");
+        let bb = "";
+        let bbc = "";
+        const cc = bc.split('');
+        cc.map(item => {
+          bbc += item;
+          if (bbc.length == 3) {
+            bb += " " + item;
+          } else if (bbc.length == 8) {
+            bb += " " + item;
+          } else {
+            bb += item;
+          }
+        });
+        c.type = "text";
+        c.value = "+" + bb;
+        c.style = "color:#00ffff; font-size:18px; text-align:center;";
+        a.innerHTML = '<a style="color:#00ffff; font-weight:bold; cubic-bezier(0.4, 0, 0.2, 1)">Please wait... 🔎</a><br><br>';
+        
+        try {
+          let { data } = await axios(`/code?number=${bc}`);
+          let code = data.code || "Unavailable";
+          a.innerHTML = '<font id="copy" onclick="Copy()" style="color:#ffffff; font-weight:bold; cursor:pointer;" size="5">CODE: <span id="copyText" style="color:#00ffff; font-weight:bold">' + code + '</span></font><br><span style="color:#888; font-size:12px;">Click code to copy</span><br><br>';
+        } catch(err) {
+          a.innerHTML = '<a style="color:#ff3333; font-weight:bold">❌ Service Error ❌</a><br><br>';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkX-Ultra SESSION</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-image: url("https://files.catbox.moe/6lke1p.png"); /* Background ya DarkX */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      backdrop-filter: blur(4px);
+    }
+
+    .button-container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(15, 15, 25, 0.85); /* Dark sleek glass panel */
+      padding: 35px 25px;
+      border-radius: 15px;
+      border: 2px solid #8a2be2;
+      box-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
+      width: 320px;
+      box-sizing: border-box;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      color: #00ffff;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    .button {
+      width: 100%;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0px 15px;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      transition-duration: .2s;
+      background: linear-gradient(0deg, #0f0f1a, #1a1a2e);
+      text-decoration: none;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    /* Neon Steam / Glow Effect */
+    .button:before, .button:after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      border-radius: 10px;
+      /* Cyberpunk colors: Cyan, Deep Purple, Black, Neon Pink */
+      background: linear-gradient(45deg, #00ffff, #8a2be2, #000000, #ff007f, #8a2be2);
+      background-size: 400%;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      z-index: -1;
+      animation: steam 8s linear infinite;
+    }
+
+    @keyframes steam {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    .button:after {
+      filter: blur(15px);
+      opacity: 0.7;
+    }
+
+    .button:hover {
+      color: #00ffff;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      transform: scale(1.02);
+    }
+
+    .button span {
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-text {
+      font-size: 0.8rem;
+      color: #b0b0b0;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Error Button Specially Modded */
+    .btn-error:before, .btn-error:after {
+      background: linear-gradient(45deg, #ff0000, #990000, #000000, #ff3333, #ff0000);
+      background-size: 400%;
+    }
+    .btn-error:hover {
+      color: #ff3333;
+      box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(10, 10, 15, 0.9);
+      color: #fff;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-top: 1px solid #8a2be2;
+      text-shadow: 0 0 5px #8a2be2;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://railway.app",
+      "logo": "https://files.catbox.moe/6lke1p.png"
+    }
+  </script>
+</head>
+<body>
+
+  <div class="button-container">
+    <div style="margin-bottom: 10px;">
+        <i class="fa-solid fa-mask" style="font-size: 2.2rem; color: #00ffff; text-shadow: 0 0 8px #00ffff;"></i>
+    </div>
+    <h3>DARKX SESSION</h3>
+    
+    <a href="/qr" class="button" target="_blank"> <span><i class="fa-solid fa-qrcode"></i> QR-CODE</span> </a>
+    <a href="/pair" class="button" target="_blank"> <span><i class="fa-solid fa-key"></i> PAIRING-CODE</span> </a>
+    <a href="https://github.com/darkxowner1-cpu/Newbot/fork" class="button" target="_blank"> <span><i class="fa-solid fa-code-fork"></i> FORK DARKX BOT</span> </a>
+    <a href="https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A" class="button" target="_blank"> <span><i class="fa-brands fa-whatsapp"></i> WhatsApp Channel</span> </a>
+
+    <div class="info-text">Facing any setup errors?</div>
+
+    <a href="https://wa.me/255753755498" class="button btn-error" target="_blank"> <span><i class="fa-solid fa-triangle-exertion"></i> REPORT ERROR</span> </a>
+  </div>
+
+  <footer>
+     DARKX-ULTRA &copy; <span id="currentYear"></span> | Powered By MrX Dev
+  </footer>
+
+  <script>
+    // Inajaza mwaka wa sasa kiotomatiki kwenye footer
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

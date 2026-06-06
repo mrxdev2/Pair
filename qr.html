@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkX-Ultra QR SCANNER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Outfit", sans-serif;
+            background-image: url("https://files.catbox.moe/6lke1p.png"); /* Toleo la background ya DarkX */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            width: 22rem;
+            text-align: center;
+            background-color: rgba(15, 15, 25, 0.85); /* Sleek dark theme background */
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #8a2be2; /* Neon Purple Border */
+            box-shadow: 0 0 25px rgba(138, 43, 226, 0.6); /* Purple Glow Effect */
+        }
+
+        #QR-content {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        #QR-content img {
+            border-radius: 10px;
+            width: 19rem;
+            border: 2px solid #00ffff; /* Neon Cyan framing for QR */
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            background-color: #fff; /* Inahakikisha QR inaonekana vizuri hata ikiwa na transparency */
+            padding: 5px;
+        }
+
+        #title-container {
+            padding: 1rem 1rem 0 1rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        #main {
+            color: #00ffff; /* Neon Cyan */
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .legend {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        #description-container {
+            padding: 0 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Custom Styled Tech Progress Bar */
+        progress {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background-color: #1a1a2e;
+            overflow: hidden;
+            border: none;
+            margin-top: 15px;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #1a1a2e;
+            border-radius: 5px;
+        }
+
+        progress::-webkit-progress-value {
+            background: linear-gradient(90deg, #8a2be2, #00ffff);
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        progress::-moz-progress-bar {
+            background: linear-gradient(90deg, #8a2be2, #00ffff);
+            border-radius: 5px;
+        }
+
+        /* Button ya Reload - DarkX Style */
+        .reload-button {
+            display: block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #8a2be2 0%, #4b0082 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .reload-button:hover {
+            background: linear-gradient(135deg, #00ffff 0%, #008080 100%);
+            color: #000;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        /* Bottom Brand Text */
+        .powered-by {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 5px #8a2be2, 0 0 10px #00ffff;
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; text-shadow: 0 0 5px #8a2be2; }
+            50% { opacity: 1; text-shadow: 0 0 12px #00ffff; }
+            100% { opacity: 0.7; text-shadow: 0 0 5px #8a2be2; }
+        }
+    </style>
+    <script>
+        var timeleft = 30;
+        var downloadTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                document.getElementById("progressBar").remove();
+                document.getElementById("main").innerHTML = "QR EXPIRED!";
+                document.getElementById("main").style.color = "#ff3333";
+                document.getElementById("main").style.textShadow = "0 0 8px #ff3333";
+                document.getElementById("legend").innerHTML = "Please reload the page to get a new code.";
+            } else {
+                document.getElementById("progressBar").value = 30 - timeleft;
+            }
+            timeleft -= 1;
+        }, 1000);
+    </script>
+</head>
+<body>
+<div class="bg">
+    <div id="content">
+        <div style="margin-bottom: 10px;">
+            <i class="fa-solid fa-mask" style="font-size: 2.2rem; color: #00ffff; text-shadow: 0 0 8px #00ffff;"></i>
+        </div>
+        <div id="QR-content">
+            <img id="qr-image" src="/server" alt="QR CODE">
+        </div>
+        <div id="title-container">
+            <h2 id="main">DARKX-ULTRA QR</h2>
+            <p class="legend" id="legend">Scan The QR Code To Connect</p>
+        </div>
+        <div id="description-container">
+            <p id="semi" class="legend"></p>
+            <progress value="0" max="30" id="progressBar"></progress>
+        </div>
+        <a href="javascript:history.go(0)" class="reload-button"><i class="fa-solid fa-rotate-right"></i> Reload QR</a>
+        <div class="powered-by">Powered By MrX Dev</div>
+    </div>
+</div>
+</body>
+</html>
