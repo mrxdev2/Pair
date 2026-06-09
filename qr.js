@@ -20,7 +20,7 @@ function removeFile(FilePath) {
 router.get('/', async (req, res) => {
     const id = makeid();
  //   let num = req.query.number;
-    async function DARKX_ULTRA_PAIR_CODE() {
+    async function MALVIN_XD_PAIR_CODE() {
         const {
             state,
             saveCreds
@@ -72,7 +72,7 @@ var randomItem = selectRandomItem(items);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "DarkX-Ultra~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hey there, DarkX-Ultra User!* 👋🏻
+                        let desc = `*Hey there, DARKX-ULTRA User!* 👋🏻
 
 Thanks for using *DARKX-ULTRA* — your session has been successfully created!
 
@@ -87,18 +87,18 @@ https://whatsapp.com/channel/0029VbCdURHH5JM4JJHYAo2X
 
 *💻 Source Code:*  
 Fork & explore the project on GitHub:  
-https://github.com/darkx-pro 
+https://github.com/darkx-pro/DarkX-Mini/
 
 ——————
 
-> *© Powered by Dx King*
+> *© Powered by DARKX-ULTRA*
 Stay cool and hack smart. ✌🏻`;
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "ᴍᴀʟᴠɪɴ-xᴅ 𝕮𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉",
-thumbnailUrl: "https://files.catbox.moe/6lke1p.png",
+title: "DARKX-ULTRA 𝕮𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉",
+thumbnailUrl: "https://files.catbox.moe/bqs70b.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VbCdURHH5JM4JJHYAo2X",
 mediaType: 1,
 renderLargerThumbnail: true
@@ -123,16 +123,16 @@ https://whatsapp.com/channel/0029VbCdURHH5JM4JJHYAo2X
 
 *💻 Source Code:*  
 Fork & explore the project on GitHub:  
-https://github.com/darkx-pro 
+https://github.com/darkx-pro/DarkX-Mini/
 
-> *© Powered by Dx King*
+> *© Powered by DARKX-ULTRA*
 Stay cool and hack smart. ✌🏻*`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
 title: "DARKX-ULTRA 𝕮𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉 ✅  ",
-thumbnailUrl: "https://files.catbox.moe/6lke1p.png",
+thumbnailUrl: "https://files.catbox.moe/bqs70b.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A",
 mediaType: 2,
 renderLargerThumbnail: true,
@@ -161,7 +161,7 @@ showAdAttribution: true
             }
         }
     }
-    await DARKX_ULTRA_PAIR_CODE();
+    await MALVIN_XD_PAIR_CODE();
 });
 setInterval(() => {
     console.log("☘️ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀...");
